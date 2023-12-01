@@ -22,7 +22,7 @@ public class GreetingController {
         Greeting greeting = new Greeting(counter.incrementAndGet(), String.format(template, name));
         requests.add(greeting);
 
-        return requests.getLast();
+        return requests.get(requests.size() - 1);
     }
 
     @GetMapping("/greeting/show-requests")
